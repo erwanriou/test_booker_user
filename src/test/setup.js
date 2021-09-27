@@ -23,13 +23,6 @@ beforeEach(async () => await dbhandler.clearDatabase())
 afterAll(async () => await dbhandler.closeDatabase())
 
 // GLOBAL SCOPE
-global.cookieGenerator = (website = "users") => [
-  `country=${faker.address.country()}`,
-  `state=${faker.address.state()}`,
-  `city=${faker.address.city()}`,
-  `ip=${faker.internet.ip()}`,
-  `website=${website}.archsplace.com`
-]
 
 global.userGenerator = () => {
   const password = faker.internet.password()
@@ -42,11 +35,6 @@ global.userGenerator = () => {
 }
 
 global.register = async (user, role) => {
-  const res = await request(app)
-    .post("/auth/register")
-    .set({ Host: "users.archsplace.com" })
-    .set("Cookie", global.cookieGenerator(role))
-    .send(user)
-    .expect(201)
+  const res = await request(app).post("/user/register").send(user).expect(201)
   return res.get("Set-Cookie")
 }

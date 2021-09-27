@@ -6,9 +6,9 @@ const requires = (path, array) =>
   }))
 
 // API ROUTES
-let user = []
+let user = ["user", "login", "logout", "register"]
 
 // APPLY REQUIRES
-    user = requires("user", user)
+user = requires("user", user)
 
 module.exports = routes = [...user]

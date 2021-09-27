@@ -1,7 +1,6 @@
 require("express-async-errors")
 const express = require("express")
 const helmet = require("helmet")
-const passport = require("passport")
 const compression = require("compression")
 const bodyParser = require("body-parser")
 const cookieSession = require("cookie-session")
@@ -11,8 +10,10 @@ const cookieParser = require("cookie-parser")
 const routes = require("./routes")
 
 // IMPORT MIDDLWARES
-
-
+const Import = require("@erwanriou/test_booker_common")
+const isError = Import("middlewares", "isError")
+const isCurrentUser = Import("middlewares", "isCurrentUser")
+const { NotFoundError } = Import("factory", "errors")
 
 // LAUNCH EXPRESS
 const app = express()
@@ -27,7 +28,6 @@ app.use(bodyParser.json())
 app.use(cookieSession({ signed: false, secure }))
 app.use(isCurrentUser)
 app.use(cookieParser())
-app.use(passport.initialize())
 app.use(compression())
 
 // USE ROUTES

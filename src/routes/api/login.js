@@ -18,7 +18,7 @@ const { BadRequestError, DatabaseConnectionError, NotAuthorizedError } = Import(
 // DECLARE ROUTER
 const router = express.Router()
 
-// @route  POST user/login
+// @route  POST api/user/login
 // @desc   Login API main function (handle AUTHORITIES)
 // @access Public
 router.post("/", async (req, res) => {

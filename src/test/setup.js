@@ -34,6 +34,6 @@ global.userGenerator = () => {
 }
 
 global.register = async (user, role) => {
-  const res = await request(app).post("/user/register").send(user).expect(201)
+  const res = await request(app).post("/api/user/register").send(user).expect(201)
   return res.get("Set-Cookie")
 }

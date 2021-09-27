@@ -2,7 +2,7 @@ const app = require("./app")
 const transaction = require("./services/transactions")
 
 // CONNECT DATABASE
-transaction("User")
+transaction("Booker User")
 
 // LISTEN APP
 app.listen(3000, () => {

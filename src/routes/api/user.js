@@ -7,7 +7,7 @@ const isCurrentUser = Import("middlewares", "isCurrentUser")
 // DECLARE ROUTER
 const router = express.Router()
 
-// @route  GET api/users/user
+// @route  GET api/user/user
 // @desc   Fetch information about currently logged user
 // @access Public
 router.get("/", isCurrentUser, (req, res) => {

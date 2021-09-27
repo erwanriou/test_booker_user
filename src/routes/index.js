@@ -1,8 +1,8 @@
 // REQUIRES FONCTION
 const requires = (path, array) =>
   array.map(item => ({
-    path: require(`../routes/${path}/${item}`),
-    url: `/${path}/${item}`
+    path: require(`../routes/api/${item}`),
+    url: `/api/${path}/${item}`
   }))
 
 // API ROUTES

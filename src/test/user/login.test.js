@@ -4,7 +4,7 @@ const app = require("../../app")
 
 it("returns a 400 never registered user", async () => {
   return request(app)
-    .post("/user/login")
+    .post("/api/user/login")
     .send({
       email: faker.internet.email(),
       password: faker.internet.password()
@@ -18,7 +18,7 @@ it("returns 400 on incorrect supplied password", async () => {
   await global.register(user, "users")
 
   const res = await request(app)
-    .post("/user/login")
+    .post("/api/user/login")
     .send({
       email: user.email,
       password: incorrectPassword
@@ -31,7 +31,7 @@ it("returns 400 on incorrect supplied password", async () => {
 it("returns a 200 on successfull login user", async () => {
   const user = global.userGenerator()
   const cookie = await global.register(user, "users")
-  const res = await request(app).post("/user/login").send(user).expect(200)
+  const res = await request(app).post("/api/user/login").send(user).expect(200)
 
   expect(res.get("Set-Cookie")).toBeDefined()
   expect(res.body.token).toBeDefined()

@@ -4,12 +4,12 @@ const app = require("../../app")
 
 it("returns a 201 on sucessfull register", async () => {
   const user = global.userGenerator()
-  return request(app).post("/user/register").send(user).expect(201)
+  return request(app).post("/api/user/register").send(user).expect(201)
 })
 
 it("returns a cookie after successfull signup", async () => {
   const user = global.userGenerator()
-  const res = await request(app).post("/user/register").send(user).expect(201)
+  const res = await request(app).post("/api/user/register").send(user).expect(201)
 
   expect(res.get("Set-Cookie")).toBeDefined()
 })
@@ -27,6 +27,6 @@ it("returns a 400 with an missing email and password", async () => {
     password2: password
   }
 
-  await request(app).post("/user/register").send(user1).expect(400)
-  await request(app).post("/user/register").send(user2).expect(400)
+  await request(app).post("/api/user/register").send(user1).expect(400)
+  await request(app).post("/api/user/register").send(user2).expect(400)
 })

@@ -3,7 +3,7 @@ const express = require("express")
 // DECLARE ROUTER
 const router = express.Router()
 
-// @route  POST user/logout
+// @route  POST api/user/logout
 // @desc   Logout a user
 // @access Public
 router.get("/", (req, res) => {

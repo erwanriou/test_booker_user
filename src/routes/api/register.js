@@ -17,7 +17,7 @@ const { BadRequestError, DatabaseConnectionError, RequestValdationError, NotAuth
 // DECLARE ROUTER
 const router = express.Router()
 
-// @route  POST auth/register
+// @route  POST api/user/register
 // @desc   Register API main function (handle AUTHORITIES)
 // @access Public
 router.post("/", async (req, res) => {

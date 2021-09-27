@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/erwanriou/test_booker_user#readme",
   "dependencies": {
-    "@erwanriou/test_booker_common": "1.1.31",
+    "@erwanriou/test_booker_common": "1.1.35",
     "@google-cloud/storage": "5.5.0",
     "bcryptjs": "2.4.3",
     "body-parser": "1.19.0",

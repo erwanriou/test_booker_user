@@ -23,7 +23,6 @@ beforeEach(async () => await dbhandler.clearDatabase())
 afterAll(async () => await dbhandler.closeDatabase())
 
 // GLOBAL SCOPE
-
 global.userGenerator = () => {
   const password = faker.internet.password()
   return {

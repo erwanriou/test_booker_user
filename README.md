@@ -17,6 +17,7 @@ First time you launch the repository, you want to create all needed variables. R
 npm run initiate
 
 ```
+
 ## TDD
 
 in order to build the rest API endpoints or event with a TDD approach, we implement some more powerfull debugging tools such as node util. See exemple below:
@@ -24,3 +25,5 @@ in order to build the rest API endpoints or event with a TDD approach, we implem
 ```js
 console.log(util.inspect(body, { showHidden: false, depth: null }))
 ```
+
+![TDD tests](https://ik.imagekit.io/lqcpp5osrzf/Screenshot_2021-09-28_at_00.02.07_MT_gE1CllS.png?updatedAt=1632780245050)
